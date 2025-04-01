@@ -42,7 +42,7 @@ class MainFragment : BrowseSupportFragment() {
     private var mBackgroundUri: String? = null
     private lateinit var clockView: TextView
     private lateinit var handler: Handler
-    private val weatherCardView = requireActivity().findViewById<View>(R.id.weather_card)
+
 
     @Deprecated("Deprecated in Java")
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -71,7 +71,7 @@ class MainFragment : BrowseSupportFragment() {
         val content = titleView.findViewById<TextView>(R.id.content_tv)
         val setting = titleView.findViewById<TextView>(R.id.setting_tv)
         val ott = titleView.findViewById<TextView>(R.id.ott_tv)
-
+        val weatherCardView = requireActivity().findViewById<View>(R.id.weather_card_group)
 
         content.setOnClickListener {
             weatherCardView.visibility= View.VISIBLE
@@ -110,7 +110,7 @@ class MainFragment : BrowseSupportFragment() {
 //                Glide.with(this)
 //                    .load("http://openweathermap.org/img/wn/${it.weatherIcon}.png")
 //                    .into(weatherCardView.findViewById(R.id.weatherIcon))
-
+                val weatherCardView = requireActivity().findViewById<View>(R.id.weather_card)
                 weatherCardView.findViewById<TextView>(R.id.temperatureText).text = "${it.temp}°"
                 weatherCardView.findViewById<TextView>(R.id.cityText).text = it.city
                 weatherCardView.findViewById<TextView>(R.id.humidityText).text =
