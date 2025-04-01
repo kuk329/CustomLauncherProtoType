@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- 타이틀 텍스트 -->
+    <TextView
+        android:id="@+id/title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/white"
+        android:textSize="24sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:padding="16dp"
+        android:visibility="visible"
+        android:text="MZB STB" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Content"
+        android:id="@+id/content_tv"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:clickable="true"
+        android:background="@drawable/focus_selector"
+        app:layout_constraintLeft_toRightOf="@id/title_tv"
+        app:layout_constraintTop_toTopOf="@id/title_tv"
+        android:nextFocusRight="@id/setting_tv"
+        android:nextFocusDown="@id/weather_card"
+        android:drawableStart="@drawable/ic_baseline_play_arrow_24"
+        app:layout_constraintBottom_toBottomOf="@id/title_tv"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Setting"
+        android:nextFocusLeft="@id/content_tv"
+        android:nextFocusRight="@id/ott_tv"
+        android:nextFocusDown="@id/weather_card"
+        android:id="@+id/setting_tv"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:clickable="true"
+        android:background="@drawable/focus_selector"
+        app:layout_constraintLeft_toRightOf="@id/content_tv"
+        app:layout_constraintTop_toTopOf="@id/title_tv"
+        android:layout_marginLeft="30dp"
+        android:drawableStart="@drawable/ic_baseline_play_arrow_24"
+        app:layout_constraintBottom_toBottomOf="@id/title_tv"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="OTT"
+        android:id="@+id/ott_tv"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:clickable="true"
+        android:nextFocusLeft="@id/setting_tv"
+        android:nextFocusRight="@id/content_tv"
+        android:nextFocusDown="@id/weather_card"
+        android:background="@drawable/focus_selector"
+        app:layout_constraintLeft_toRightOf="@id/setting_tv"
+        app:layout_constraintTop_toTopOf="@id/title_tv"
+        android:layout_marginLeft="30dp"
+        app:layout_constraintBottom_toBottomOf="@id/title_tv"
+        android:drawableStart="@drawable/ic_baseline_play_arrow_24"
+        />
+
+    <!-- 시계 (선택사항) -->
+    <TextView
+        android:id="@+id/clock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/title_tv"
+        app:layout_constraintBottom_toBottomOf="@id/title_tv"
+        android:layout_marginEnd="40dp"
+        android:text="12:00" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

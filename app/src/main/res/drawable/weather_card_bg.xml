@@ -1,0 +1,18 @@
+<!--&lt;!&ndash; res/drawable/weather_card_bg.xml &ndash;&gt;-->
+<!--<shape xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    android:shape="rectangle">-->
+<!--    <corners android:radius="16dp" />-->
+<!--    <gradient-->
+<!--        android:startColor="#4FC3F7"-->
+<!--        android:endColor="#0288D1"-->
+<!--        android:angle="90"/>-->
+<!--</shape>-->
+
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+android:shape="rectangle">
+<corners android:radius="24dp" />
+<gradient
+    android:startColor="#3A8DFF"
+    android:endColor="#69C0FF"
+    android:angle="90" />
+</shape>
