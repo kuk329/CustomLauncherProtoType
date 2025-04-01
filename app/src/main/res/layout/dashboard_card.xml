@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- 네트워크 상태 -->
+    <TextView
+        android:id="@+id/network_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Wi-Fi 연결됨"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        android:layout_marginBottom="8dp" />
+
+    <!-- 즐겨찾기 앱 (아이콘 3개 수평 정렬) -->
+    <LinearLayout
+        android:id="@+id/favorite_apps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="8dp">
+
+        <ImageView
+            android:id="@+id/app_netflix"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_netflix"
+            android:layout_marginEnd="16dp"
+            android:contentDescription="Netflix" />
+
+        <ImageView
+            android:id="@+id/app_wave"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_wave"
+            android:layout_marginEnd="16dp"
+            android:contentDescription="Wavve" />
+
+        <ImageView
+            android:id="@+id/app_youtube"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_youtube"
+            android:contentDescription="YouTube" />
+    </LinearLayout>
+
+    <!-- 디바이스 정보 -->
+    <TextView
+        android:id="@+id/device_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="IP: 192.168.0.10\nModel: KSTB6277\nBuild: v1.2.3"
+        android:textColor="@android:color/white"
+        android:textSize="14sp"
+        android:layout_marginBottom="4dp" />
+
+    <!-- 저장공간 정보 -->
+    <TextView
+        android:id="@+id/storage_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="저장공간: 5.2GB / 16GB"
+        android:textColor="@android:color/white"
+        android:textSize="14sp" />
+</LinearLayout>
