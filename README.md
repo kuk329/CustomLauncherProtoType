@@ -59,4 +59,4 @@ adb shell am start -n com.example.customerlauncher/.MainActivity
 
 ## 🙌 기여
 - 버그 수정 및 기능 제안은 Pull Request 또는 이슈 등록 부탁드립니다.
-- STB 및 TV UX 관련 제안도 환영합니다!
+- AIDL 연동관련 부분은 별도 branch로 진행 부탁드립니다. 
