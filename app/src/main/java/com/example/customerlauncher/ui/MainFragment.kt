@@ -121,15 +121,6 @@ class MainFragment : BrowseSupportFragment() {
         val content = titleView.findViewById<TextView>(R.id.content_tv)
         val setting = titleView.findViewById<TextView>(R.id.setting_tv)
         val ott = titleView.findViewById<TextView>(R.id.ott_tv)
-        val weatherCardView = requireActivity().findViewById<View>(R.id.weather_card_group)
-
-        content.setOnClickListener {
-            weatherCardView.visibility= View.VISIBLE
-        }
-
-        setting.setOnClickListener {
-            weatherCardView.visibility= View.GONE
-        }
         content.applyFocusAnimation()
         setting.applyFocusAnimation()
         ott.applyFocusAnimation()

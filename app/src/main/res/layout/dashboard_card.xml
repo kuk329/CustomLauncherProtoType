@@ -3,14 +3,16 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="6dp"
+    android:background="@drawable/weather_card_bg">
+    >
 
     <!-- 네트워크 상태 -->
     <TextView
         android:id="@+id/network_status"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Wi-Fi 연결됨"
+        android:text="Network State:"
         android:textColor="@android:color/white"
         android:textSize="16sp"
         android:layout_marginBottom="8dp" />
@@ -27,7 +29,6 @@
             android:id="@+id/app_netflix"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:src="@drawable/ic_netflix"
             android:layout_marginEnd="16dp"
             android:contentDescription="Netflix" />
 
@@ -35,7 +36,6 @@
             android:id="@+id/app_wave"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:src="@drawable/ic_wave"
             android:layout_marginEnd="16dp"
             android:contentDescription="Wavve" />
 
@@ -43,7 +43,6 @@
             android:id="@+id/app_youtube"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:src="@drawable/ic_youtube"
             android:contentDescription="YouTube" />
     </LinearLayout>
 
@@ -52,7 +51,7 @@
         android:id="@+id/device_info"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="IP: 192.168.0.10\nModel: KSTB6277\nBuild: v1.2.3"
+        android:text="IP: \nModel: KSTB6277\nBuild: v1.2.3"
         android:textColor="@android:color/white"
         android:textSize="14sp"
         android:layout_marginBottom="4dp" />
@@ -62,7 +61,7 @@
         android:id="@+id/storage_info"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="저장공간: 5.2GB / 16GB"
+        android:text="저장공간:"
         android:textColor="@android:color/white"
         android:textSize="14sp" />
 </LinearLayout>
