@@ -37,5 +37,6 @@ data class WeatherDTO(
 fun WeatherDTO.toWeatherInfo(): WeatherInfo {
     val description = weather.firstOrNull()?.description ?: "Unknown"
     val icon = weather.firstOrNull()?.icon ?:"Unknown"
-    return WeatherInfo(main.temp.toString(), name, main.humidity.toString(), description, icon)
+    val id = weather.firstOrNull()?.id?: 800
+    return WeatherInfo(main.temp.toString(), name, main.humidity.toString(), description, icon, id, wind.speed)
 }

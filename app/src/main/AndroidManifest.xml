@@ -4,6 +4,7 @@
     package="com.example.customerlauncher">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" tools:ignore="QueryAllPackagesPermission" />
 
     <uses-feature
         android:name="android.hardware.touchscreen"
@@ -20,7 +21,7 @@
         android:name=".ui.CustomerLauncherApplication"
         android:theme="@style/Theme.CustomerLauncher">
         <activity
-            android:name=".ui.MainActivity"
+            android:name=".ui.main.MainActivity"
             android:banner="@drawable/app_icon_your_company"
             android:exported="true"
             android:icon="@drawable/app_icon_your_company"
@@ -35,7 +36,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.BrowseErrorActivity"
+            android:name=".ui.leanback.BrowseErrorActivity"
             android:exported="false" />
     </application>
 

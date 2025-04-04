@@ -1,5 +1,6 @@
-package com.example.customerlauncher.ui
+package com.example.customerlauncher.ui.main
 
+import android.graphics.Color
 import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.os.Handler
@@ -8,6 +9,7 @@ import android.util.DisplayMetrics
 import android.util.Log
 import android.view.KeyEvent
 import android.view.View
+import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.content.ContextCompat
@@ -19,7 +21,10 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import com.airbnb.lottie.LottieAnimationView
 import com.example.customerlauncher.R
-import com.example.customerlauncher.custom.CustomTitleView
+import com.example.customerlauncher.ui.custom.CustomTitleView
+import com.example.customerlauncher.domain.model.WeatherTheme
+import com.example.customerlauncher.ui.common.WeatherThemeManager
+import com.example.customerlauncher.ui.dashboard.DashboardDataFragment
 import jp.wasabeef.blurry.Blurry
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
@@ -57,6 +62,7 @@ class MainFragment : BrowseSupportFragment() {
         loadLocationInfo()
         setFocusClickListenr()
         initFocus()
+
 
     }
 
@@ -146,20 +152,26 @@ class MainFragment : BrowseSupportFragment() {
         viewModel.weatherInformationStateFlow.collect {
             it?.let {
                 val weatherCardView = requireActivity().findViewById<View>(R.id.weather_card)
+                val theme = WeatherThemeManager.getThemeForWeather(800)
+                setWeatherTheme(theme)
                 weatherCardView.findViewById<TextView>(R.id.temperatureText).text = "${it.temp}°"
                 weatherCardView.findViewById<TextView>(R.id.cityText).text = it.city
                 weatherCardView.findViewById<TextView>(R.id.humidityText).text = "습도 ${it.humidity}%"
                 val cardContent = weatherCardView.findViewById<View>(R.id.cardContent)
-                val blurredImageView = weatherCardView.findViewById<ImageView>(R.id.blurredImageView)
-                val bitmap = cardContent.drawToBitmap()
+                val dateText = weatherCardView.findViewById<TextView>(R.id.dateText)
+                val windText = weatherCardView.findViewById<TextView>(R.id.windText)
                 val lottieView = weatherCardView.findViewById<LottieAnimationView>(R.id.weatherIcon)
                 lottieView.setAnimation(R.raw.sunny)
                 lottieView.playAnimation()
-                Blurry.with(context)
-                    .radius(10)
-                    .sampling(2)
-                    .from(bitmap)
-                    .into(blurredImageView)
+                val dateFormat = SimpleDateFormat("yyyy.MM.dd (E)", Locale.KOREAN)
+                dateFormat.timeZone = TimeZone.getTimeZone("Asia/Seoul")
+                val currentDate = dateFormat.format(Date())
+                Log.d("Weather", "$currentDate")
+                dateText.text = currentDate
+
+// 바람 정보 출력
+                val windSpeed = it.windSpeed ?: 0.0 // ex: 4.63
+                windText.text = "바람: ${String.format("%.1f", windSpeed)} m/s"
             }
         }
     }
@@ -189,6 +201,39 @@ class MainFragment : BrowseSupportFragment() {
 
     }
 
+
+
+    private fun setWeatherTheme(theme: WeatherTheme){
+        // ✅ 배경 적용
+        requireActivity().findViewById<View>(R.id.root_layout)?.background = theme.backgroundGradient
+
+        // ✅ 날씨 카드 적용
+        val weatherCard = requireActivity().findViewById<View>(R.id.weather_card)
+        weatherCard.background = theme.cardGradient
+
+        // ✅ 미니 대시보드도 동일하게
+        val dashboardFragment = requireActivity().supportFragmentManager.findFragmentById(R.id.dashboard_container)
+        if (dashboardFragment is DashboardDataFragment) {
+            dashboardFragment.applyTheme(theme)
+        }
+
+        // 텍스트 색상 조정 (선택)
+        val textColor = if (theme.isDarkText) Color.BLACK else Color.WHITE
+        applyTextColorToAll(weatherCard, textColor)
+
+    }
+
+
+    private fun applyTextColorToAll(view: View, color: Int) {
+        when (view) {
+            is TextView -> view.setTextColor(color)
+            is ViewGroup -> {
+                for (i in 0 until view.childCount) {
+                    applyTextColorToAll(view.getChildAt(i), color)
+                }
+            }
+        }
+    }
     /*
     실시간 시간 업그레이드 기능
      */

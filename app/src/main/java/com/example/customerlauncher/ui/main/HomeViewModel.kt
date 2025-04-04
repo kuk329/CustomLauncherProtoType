@@ -1,8 +1,7 @@
-package com.example.customerlauncher.ui
+package com.example.customerlauncher.ui.main
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.customerlauncher.data.dto.WeatherDTO
 import com.example.customerlauncher.domain.model.IpInfo
 import com.example.customerlauncher.domain.model.WeatherInfo
 import com.example.customerlauncher.domain.repostority.IpinfoRepository

@@ -5,5 +5,7 @@ data class WeatherInfo(
     val city: String,
     val humidity: String,
     val weather: String,
-    val weatherIcon: String
+    val weatherIcon: String,
+    val weatherId: Int,
+    val windSpeed: Double,
 )

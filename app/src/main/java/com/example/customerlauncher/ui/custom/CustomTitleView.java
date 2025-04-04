@@ -12,7 +12,7 @@
  * the License.
  */
 
-package com.example.customerlauncher.custom;
+package com.example.customerlauncher.ui.custom;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;

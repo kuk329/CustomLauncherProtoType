@@ -1,4 +1,4 @@
-package com.example.customerlauncher.ui
+package com.example.customerlauncher.ui.leanback
 
 import android.os.Bundle
 import android.os.Handler
@@ -12,6 +12,7 @@ import android.widget.ProgressBar
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import com.example.customerlauncher.R
+import com.example.customerlauncher.ui.main.MainFragment
 
 /**
  * BrowseErrorActivity shows how to use ErrorFragment.

@@ -29,7 +29,7 @@
         android:layout_height="match_parent"
         android:orientation="horizontal"
         android:padding="24dp"
-        android:background="@drawable/weather_card_bg">
+       >
 
         <com.airbnb.lottie.LottieAnimationView
             android:id="@+id/weatherIcon"
@@ -70,7 +70,14 @@
                 android:textSize="18sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
-
+            <TextView
+                android:id="@+id/windText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="바람: 4.6m/s"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:layout_marginTop="4dp"/>
             <TextView
                 android:id="@+id/dateText"
                 android:layout_width="wrap_content"

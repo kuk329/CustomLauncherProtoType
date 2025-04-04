@@ -1,10 +1,10 @@
-package com.example.customerlauncher.ui
+package com.example.customerlauncher.ui.main
 
 import android.os.Bundle
-import android.util.Log
 import android.view.KeyEvent
 import androidx.fragment.app.FragmentActivity
 import com.example.customerlauncher.R
+import com.example.customerlauncher.ui.dashboard.DashboardDataFragment
 
 /**
  * Loads [MainFragment].
@@ -18,6 +18,10 @@ class MainActivity : FragmentActivity() {
             supportFragmentManager.beginTransaction()
                 .replace(R.id.main_browse_fragment, MainFragment())
                 .commitNow()
+
+           supportFragmentManager.beginTransaction()
+                .replace(R.id.dashboard_container, DashboardDataFragment())
+                .commit()
         }
     }
 

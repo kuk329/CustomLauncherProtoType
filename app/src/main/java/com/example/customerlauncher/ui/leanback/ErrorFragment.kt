@@ -1,4 +1,4 @@
-package com.example.customerlauncher.ui
+package com.example.customerlauncher.ui.leanback
 
 import android.os.Bundle
 import android.view.View

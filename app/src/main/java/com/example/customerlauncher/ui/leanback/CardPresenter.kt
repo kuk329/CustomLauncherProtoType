@@ -1,4 +1,4 @@
-package com.example.customerlauncher.ui
+package com.example.customerlauncher.ui.leanback
 
 import android.graphics.drawable.Drawable
 import android.util.Log
@@ -6,7 +6,6 @@ import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.leanback.widget.ImageCardView
 import androidx.leanback.widget.Presenter
-import com.bumptech.glide.Glide
 import com.example.customerlauncher.R
 import kotlin.properties.Delegates
 

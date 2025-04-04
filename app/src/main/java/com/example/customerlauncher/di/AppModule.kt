@@ -1,6 +1,6 @@
 package com.example.customerlauncher.di
 
-import com.example.customerlauncher.ui.HomeViewModel
+import com.example.customerlauncher.ui.main.HomeViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
